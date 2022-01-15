@@ -1,8 +1,11 @@
 .navigation {
+    //the navigation button in reality is a checkbox.
     &__checkbox {
         display: none;
     }
 
+//NAV BUTTON
+    //the round "button" in the upper right corner is always visible, no matter if the checkbox is checked or not
     &__button {
         background-color: $color-white;
         height: 7rem;
@@ -27,6 +30,8 @@
         }
     }
 
+//NAV BACKGROUND
+    //the background in reality is always there, but positioned behind the menu "button" and therefore not visible when the checkbox is unchecked
     &__background {
         height: 6rem;
         width: 6rem;
@@ -36,7 +41,8 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000;
-        transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
+        //reduced transform seconds from 8 to 1, otherwise the menu remains without background for a while
+        transition: transform .1s cubic-bezier(0.83, 0, 0.17, 1);
 
         @include respond(tab-port) {
             top: 4.5rem;
@@ -49,18 +55,21 @@
         }
     }
 
+    //the nav (hence, the navigation menu), 
     &__nav {
         height: 100vh;
         position: fixed;
         top: 0;
         left: 0;
         z-index: 1500;
-
-        opacity: 0;
-        width: 0;
+        //I added a display none to avoid that the user clicks one of the nav voices which indeed otherwise,
+        //although being of width 0, could be clicked otherwise.
+        display: none;
         transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
     }
 
+//NAV MENU
+    //this is the menu (classical list with list-style none)
     &__list {
         @include absCenter;
         list-style: none;
@@ -68,11 +77,13 @@
         width: 100%;
     }
 
+    //margin between the single <li> items
     &__item {
         margin: 1rem;
     }
 
     &__link {
+        //default style for links and visited links of the navigation menu
         &:link,
         &:visited {
             display: inline-block;
@@ -86,12 +97,15 @@
             background-size: 220%;
             transition: all .4s;
 
+            //every menu link is made of a number and a descriptive text.
+            //this is the distance between number and text
             span {
                 margin-right: 1.5rem;
                 display: inline-block;
             }
         }
         
+        //navigation link style on hover and on click
         &:hover,
         &:active {
             background-position: 100%;
@@ -100,22 +114,31 @@
         }
     }
 
-    //FUNCTIONALITY
+//FUNCTIONALITY
 
+    //on click on the nav button, the background scales over the whole page
     &__checkbox:checked ~ &__background {
         transform: scale(80);
     }
 
+    //on click on the nav button (with checkbox "behind"), the nav menu appears
     &__checkbox:checked ~ &__nav {
-        opacity: 1;
         width: 100%;
+        //since I added display:none to &__nav selector, I had to add this line. Otherwise the menu would not appear
+        display: inline-block;
     }
 
-    //ICON
+//ICON 
+        //the icon consists in a line within the nav button.
+        //before and after the icon we draw other 2 icons.
+        //on hover, they slightly widen their distance.
+        //on click, icon 2 of 3 disappears and the ramaining two will form a cross
     &__icon {
+        //positioning of the first icon
         position: relative;
         margin-top: 3.43em;
-
+        
+        //every icon has the following styles
         &,
         &::before,
         &::after {
@@ -125,6 +148,7 @@
             display: inline-block;
         }
 
+        //the 1st and 3rd icon have these styles
         &::before,
         &::after {
             content: "";
@@ -133,27 +157,33 @@
             transition: all .2s;
         }
 
+        //distance of 1st and 3rd icon from top
         &::before { top: -.8rem; }
         &::after { top: .8rem; }
     }
 
+    //on hover, line 1 out of 3 moves slightly upwards
     &__button:hover &__icon::before {
         top: -1rem;
     }
 
+    //on hover, line 3 out of 3 moves slightly downwards
     &__button:hover &__icon::after {
         top: 1rem;
     }
 
+    //line 2 out of 3 disappears
     &__checkbox:checked + &__button &__icon {
         background-color: transparent;
     }
 
+    //line 1 out of 3 move to form a cross
     &__checkbox:checked + &__button &__icon::before {
         transform: rotate(135deg);
         top: 0;
     }
 
+    //line 3 out of 3 move to form a cross
     &__checkbox:checked + &__button &__icon::after {
         transform: rotate(-135deg);
         top: 0;

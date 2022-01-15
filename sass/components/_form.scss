@@ -69,7 +69,7 @@
 
     &__radio-label {
         font-size: $default-font-size;
-        cursor: pointer;
+        //cursor: pointer;
         position: relative;
         padding-left: 4.5rem;
     }
@@ -98,6 +98,6 @@
     }
 
     &__radio-input:checked ~ &__radio-label &__radio-button::after {
-        opacity: 1;;
+        opacity: 1;
     }
 }
