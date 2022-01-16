@@ -30,12 +30,11 @@
             border-bottom: 3px solid $color-secondary-dark;
         }
 
-        //works only in safari and chrome
+        //works not in all browsers
         &::-webkit-input-placeholder {
         color: $color-grey-dark-2;
         }
     }
-
 
     &__label {
         font-size: 1.2rem;
@@ -46,13 +45,13 @@
         transition: all .3s;
     }
 
-    //+ is an "adjacent" sibling selector
     &__input:placeholder-shown + &__label {
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4rem);
     }
 
+    //radio buttons with custom style
     &__radio-group {
         width: 49%;
         display: inline-block;
@@ -69,7 +68,7 @@
 
     &__radio-label {
         font-size: $default-font-size;
-        //cursor: pointer;
+        cursor: pointer;
         position: relative;
         padding-left: 4.5rem;
     }

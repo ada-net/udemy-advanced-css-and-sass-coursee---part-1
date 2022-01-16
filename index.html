@@ -17,12 +17,13 @@
 
 <body>
 
+<!--NAVIGATION-->
     <div class="navigation">
         <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
         <label for="navi-toggle" class="navigation__button">
             <span class="navigation__icon">&nbsp;</span>
         </label>
-        
+
         <div class="navigation__background">
             &nbsp;
         </div>
@@ -39,6 +40,7 @@
         </nav>
     </div>
 
+<!--HEADER WITH H1-->
     <header class="header">
         <div class="header__logo-box">
             <img src="img/logo-white.png" alt="logo" class="header__logo">
@@ -54,7 +56,9 @@
         </div>
     </header>
 
+<!--MAIN-->
     <main>
+        <!--ABOUT SECTION------------------------------------------------------------------->
         <section class="section-about">
             <!--utility classes exist only for one reason and are being created for reuse-->
             <div class="u-center-text u-margin-bottom-big">
@@ -79,7 +83,6 @@
                 </div>
                 <div class="col-1-of-2">
                     <div class="composition">
-
                         <!--let the browser choose the best img, without density descriptor for 1x or 2x.
                         Instead, we add the width after the img urls.
                         src is the fallback attribute for browsers who can't handle with srcset and sizes.
@@ -87,22 +90,16 @@
                             600px/16 = 37.5em
                         -->
                         <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
-                        sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" 
-                        alt="photo 1"
-                        class="composition__photo composition__photo--p1"
-                        src="img/nat-1-large.jpg">
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="photo 1"
+                            class="composition__photo composition__photo--p1" src="img/nat-1-large.jpg">
 
                         <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
-                        sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                        alt="photo 2"
-                        class="composition__photo composition__photo--p2"
-                        src="img/nat-2-large.jpg">
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="photo 2"
+                            class="composition__photo composition__photo--p2" src="img/nat-2-large.jpg">
 
                         <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
-                        sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                        alt="photo 3"
-                        class="composition__photo composition__photo--p3"
-                        src="img/nat-3-large.jpg">
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="photo 3"
+                            class="composition__photo composition__photo--p3" src="img/nat-3-large.jpg">
 
                         <!--
                         <img src="img/nat-1-large.jpg" alt="photo 1" class="composition__photo composition__photo--p1">
@@ -114,8 +111,8 @@
             </div>
         </section>
 
+        <!--FEATURES SECTION------------------------------------------------------------------->
         <section class="section-features">
-
             <div class="row">
                 <div class="col-1-of-4">
                     <div class="feature-box">
@@ -163,6 +160,7 @@
             </div>
         </section>
 
+        <!--TOURS SECTION------------------------------------------------------------------->
         <section class="section-tours" id="section-tours">
             <div class="u-center-text u-margin-bottom-big">
                 <h2 class="heading-secondary">
@@ -268,6 +266,29 @@
             </div>
         </section>
 
+        <!--POPUP BEHIND "BOOK NOW" BUTTONS IN TOURS SECTION--------------------------------------->
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src="img/nat-8.jpg" alt="tour photo" class="popup__img">
+                    <img src="img/nat-9.jpg" alt="tour photo" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a>
+                    <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read the terms before
+                        booking</h3>
+                    <p class="popup__text">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe sit est similique corrupti delectus
+                        fugiat, rem, molestiae sapiente in maxime odio corporis repellendus id enim harum dolores incidunt
+                        consectetur vitae itaque qui a dignissimos sed quae quia! Cupiditate, ea repellat!
+                    </p>
+                    <a href="#" class="btn btn--green">Book now</a>
+                </div>
+            </div>
+        </div>
+
+        <!--TESTIMONIALS SECTION------------------------------------------------------------------->
         <section class="section-stories">
             <div class="bg-video">
                 <!--embed a video file on background: remove the src in the video tag and add src as a child-->
@@ -326,6 +347,7 @@
             </div>
         </section>
 
+        <!--TOUR BOOKING FORM------------------------------------------------------------------->
         <section class="section-book">
             <div class="row">
                 <div class="book">
@@ -367,7 +389,7 @@
                             <div class="form__group">
                                 <button class="btn btn--green">Next step &rarr;</button>
                             </div>
-                            
+
                         </form>
                     </div>
                 </div>
@@ -375,15 +397,16 @@
         </section>
     </main>
 
+<!--FOOTER-->    
     <footer class="footer">
         <div class="footer__logo-box">
 
             <!--art direction-->
             <picture class="footer__logo">
-                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" 
+                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x"
                     media="max-width: 37.5em">
                 <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="full logo"
-                src="img/logo-green-2x.png">
+                    src="img/logo-green-2x.png">
             </picture>
 
             <!--with srcset instead of src we can make the browser choose the best image for the user's screen resolution
@@ -403,31 +426,17 @@
             </div>
             <div class="col-1-of-2">
                 <p class="footer__copyright">
-                    Built by <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online course Advanced CSS and SASS. Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas Schmedtmann, is of course highly appreciated.
+                    Built by <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online course Advanced CSS
+                    and SASS @UDEMY. Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both
+                    personal and commercial use, but NOT to claim it as your own design. A credit to the original
+                    author, Jonas Schmedtmann, is of course highly appreciated.
                 </p>
             </div>
         </div>
     </footer>
 
-    <div class="popup" id="popup">
-        <div class="popup__content">
-            <div class="popup__left">
-                <img src="img/nat-8.jpg" alt="tour photo" class="popup__img">
-                <img src="img/nat-9.jpg" alt="tour photo" class="popup__img">
-            </div>
-            <div class="popup__right">
-                <a href="#section-tours" class="popup__close">&times;</a>
-                <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
-                <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read the terms before booking</h3>
-                <p class="popup__text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe sit est similique corrupti delectus fugiat, rem, molestiae sapiente in maxime odio corporis repellendus id enim harum dolores incidunt consectetur vitae itaque qui a dignissimos sed quae quia! Cupiditate, ea repellat!
-                </p>
-                <a href="#" class="btn btn--green">Book now</a>
-            </div>
-        </div>
-    </div>
 
-    <!--
+    <!--GRID STRUCTURES READY TO BE REUSED
     <section class="grid-test">
         <div class="row">
             <div class="col-1-of-2">

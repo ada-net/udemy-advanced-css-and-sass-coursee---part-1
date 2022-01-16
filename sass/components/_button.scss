@@ -1,6 +1,5 @@
+//the page's green buttons 
 .btn {
-
-    /*pseudoclasses*/
     &,
     &:link,
     &:visited {
@@ -12,8 +11,6 @@
         transition: all .2s;
         position: relative;
         font-size: $default-font-size;
-
-        //change for the <button> element
         border: none;
         cursor: pointer;
     }
@@ -53,7 +50,6 @@
         }
     }
 
-    /*pseudo element treated like a child of the button*/
     &::after {
         content: "";
         display: inline-block;
@@ -75,6 +71,7 @@
 
 }
 
+//textlinks with underlining
 .btn-text {
     &:link, 
     &:visited {

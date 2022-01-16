@@ -1,8 +1,5 @@
 .card {
-
-    //functionality
-    perspective: 150rem;
-    -moz-perspective: 150rem;
+    // card functionality
     position: relative;
     height: 52rem;
 
@@ -13,7 +10,6 @@
         top: 0;
         left: 0;
         width: 100%;
-        //webkit prefix to make backface visibility work in safari
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         border-radius: 3px;
@@ -57,12 +53,10 @@
         background-blend-mode: screen;
         //webkit prefix to make clip-path work across all browsers
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        //clip-path does not work on edge and internet explorer
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         //clip-path breaks the overflow, so there is a manual border radius to write
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
-    
 
         &--1 {
             //the url path is from the perspective of the compiled css file!
@@ -94,7 +88,6 @@
         padding: 1rem 1.5rem;
         //box-decoration-break used for padding for first and last letters
         -webkit-box-decoration-break: clone;
-        //does not work in chrome without the webkit
         box-decoration-break: clone;
 
         &--1 {
@@ -119,7 +112,6 @@
         ul {
             list-style: none;
             width: 80%;
-            //center the text
             margin: 0 auto;
 
             li {
@@ -158,8 +150,7 @@
     }
 
 
-    //MEDIA QUERY
-   // @include respond(tab-port) {
+//MEDIA QUERY
        @media only screen and (max-width: 56.25em),
             //when the used device can not hover
             only screen and (hover: none) {
